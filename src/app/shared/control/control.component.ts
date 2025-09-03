@@ -1,5 +1,6 @@
 import {
   Component,
+  ElementRef,
   HostBinding,
   HostListener,
   Input,
@@ -22,7 +23,10 @@ export class ControlComponent {
   @HostBinding('class') className = 'control';
   @Input({ required: true }) title!: string;
 
+  constructor(private ele: ElementRef) {}
+
   @HostListener('click') onClick() {
+    console.log(this.ele.nativeElement);
     console.log('Clicked!');
   }
 }
