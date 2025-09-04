@@ -7,7 +7,9 @@
 }">
   @if (currentStatus === 'online') {
   <p>Servers are online</p>
-  <p>All systems are operational.</p>
+  <p [style]="{
+    fontSize: '32px',
+  }">All systems are operational.</p>
   } @else if (currentStatus === 'offline') {
   <p>Servers are offline</p>
   <p>Functionality should be restored soon.</p>
